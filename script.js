@@ -1,7 +1,7 @@
 /*Constants*/
 PLAYER_ONE = 1;
 PLAYER_TWO = -1;
-GAME_TIE = 'T';
+GAME_TIE = 2;
 
 
 /*Variables*/
@@ -80,23 +80,23 @@ function checkWinConditions() {
   }
 
   function checkIfBoardFull() {
-    if (boardState[0][0] !== 0 && boardState[0][1] !== 0 && boardState[0][2] !== 0 && boardState[1][0] !== 0 && boardState[1][1] !== 0 && boardState[1][2] !== 0 && boardState[2][0] !== 0 && boardState[2][1] !== 0 && boardState[2][2] !== 0){ gameStatus = GAME_TIE; }
+    if (boardState[0][0] !== 0 && boardState[0][1] !== 0 && boardState[0][2] !== 0 && boardState[1][0] !== 0 && boardState[1][1] !== 0 && boardState[1][2] !== 0 && boardState[2][0] !== 0 && boardState[2][1] !== 0 && boardState[2][2] !== 0){ gameState = GAME_TIE; }
   }
 }
 function renderText() {
-  if (gameState === 0){
-    if (playerTurn === 1){
-      titleText.innerHTML = "Player 1's Turn";
-    } else {
-      titleText.innerHTML = "Player 2's Turn";
-    }
-  } else if (gameState === 1 ) {
+  if (gameState === 1 ) {
     titleText.innerHTML = "Player 1's Win";
   } else if (gameState === -1 ) {
     titleText.innerHTML = "Player 2's Win";
-  } else {
+  } else if (gameState === 2 ) {
     titleText.innerHTML = "It's a Tie";
-  }
+  } else {
+      if (playerTurn === 1){
+      titleText.innerHTML = "Player 1's Turn";
+    } else {
+      titleText.innerHTML = "Player 2's Turn";
+    }  
+  } 
 }
 function initialize () {
   boardState = [[0, 0, 0], [0, 0, 0], [0, 0, 0]];
