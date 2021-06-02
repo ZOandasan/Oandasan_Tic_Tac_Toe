@@ -1,0 +1,88 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+    --accent-light: rgba(255, 240, 10, 0.5); /* declares object that other styles can call to */
+    --accent-dark: rgba(10, 10, 50, 0.8);
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr; /* 1fr is one fractional unit (or take up the remaining space) */
+}
+
+header {
+    font-size: 6vmin; /* #vmin changes the size of the text based on the window size. */
+    padding: 1vmin;
+    background-color: var(--accent-light); /* calls the color from the object); */
+    text-align: center;
+    letter-spacing: 0.5vmin;
+}
+
+main {
+    display: flex;
+    flex-direction: column; /* Sets the Flex to vertical */;
+    justify-content: center; /* Centers the Horizontal Elements */
+    align-items: center; /* Centers the Vertical Elements */
+}
+
+h1, h2 {
+  text-align: center;
+  color: var(--accent-dark);
+}
+
+h1 {
+  background-color: var(--accent-light)
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+section button {
+    font-size: 10vmin;
+    font-weight: bold;
+    width: 20vmin;
+    height: 20vmin;
+    margin: 0.5vmin;
+    border: 0.3vmin, solid, rgba (10, 10, 10, 0.9);
+    border-radius: 30%; /* Sets the buttons to rounded. 50% sets the rounding to cover the entire box, making the buttons circles. */
+}
+
+#replay {
+    height: 10vmin;
+    font-size: 2vmin;
+    font-weight: bold;
+    padding: 2vmin;
+    margin-top: 4vmin;
+    border: .3vmin solid var(--accent-dark);
+    color: black;
+    background-color: var(--accent-light);
+    border-radius: 2vmin;
+    outline: none;
+    cursor: pointer;
+}
+
+#replay:hover {
+    background-color: grey;
+    color: white;
+}
+
+button.player-one{
+    background-color: green;
+    color: black;
+    cursor: not-allowed;
+}
+
+button.player-two{
+    background-color: red;
+    color: black;
+    cursor: not-allowed;
+}
